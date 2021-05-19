@@ -19,20 +19,47 @@ ReactDOM.render(
           -moz-osx-font-smoothing: grayscale;
         }
 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+          font-family: 'Open Sans', sans-serif;
+          text-align: center;
+          text-decoration: none;
+        }
+
         h1 {
           font-size: 40px;
           font-weight: 600;
           margin-top: 10px;
           line-height: 48px;
-          text-decoration: none;
+          /* text-decoration: none; */
         }
 
         h2 {
           font-size: 40px;
           font-weight: 600;
-          margin: 0px 0;
+          margin: 0 0;
           line-height: 48px;
-          text-decoration: none;
+          /* text-decoration: none; */
+          /* text-align: center; */
+        }
+
+        h3 {
+          font-size: 24px;
+          margin-top: 13px;
+          margin-bottom: 0;
+          color: #232221;
+          text-align: left;
+        }
+        h4 {
+          font-size: 18px;
+          color: #696663;
+          font-weight: 400;
+          /* text-align: center; */
+          /* font-family: 'Open Sans', sans-serif; */
+          line-height: 28px;
         }
 
         code {

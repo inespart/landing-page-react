@@ -17,7 +17,7 @@ import toldo from './images/toldo.png';
 
 // CSS-in-JS
 
-// Navigation Bar
+// Nav Bar style
 const navBarContainer = css`
   display: flex;
   margin: 0 250px;
@@ -28,7 +28,7 @@ const navBarContainer = css`
   }
 `;
 
-// Header
+// Header style
 const headerStyle = css`
   background-image: linear-gradient(167deg, #fff 53%, #fce8d1 0, #fce8d1 103%);
   height: 435px;
@@ -57,7 +57,7 @@ const navBar = css`
   }
 `;
 
-// Hero Section
+// Hero Section style
 const heroStyle = css`
   margin-top: 115px;
 
@@ -124,7 +124,7 @@ const buttonBrown = css`
   font-family: 'Inter', sans-serif;
 `;
 
-// Hero Banner Customers
+// Hero Banner Customers style
 const customersStyle = css`
   /* background-color: #fbe7d0; */
   /* padding-bottom: 5px; */
@@ -151,8 +151,8 @@ const customerIconsStyle = css`
   }
 `;
 
-// How it works Style
-const howItWorksStyle = css`
+// Offers & Services style
+const servicesContainer = css`
   margin: 0 250px;
   padding: 55px 0;
 
@@ -232,9 +232,86 @@ const ourWorkItemsContainer = css`
   }
 `;
 
+// How it works style
+const howItWorksStyle = css`
+  background-color: white;
+  padding: 60px 0;
+`;
+
+const stepsContainer = css`
+  margin: 60px 350px;
+`;
+
+const stepStyle = css`
+  background-color: #fde9d2;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+  margin-bottom: 60px;
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #4a4846;
+  }
+`;
+
+const stepHeadingContainer = css`
+  display: grid;
+  grid-template-columns: 15% 80%;
+  grid-gap: 15px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+`;
+
+const number = css`
+  font-size: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  opacity: 0.3;
+  text-align: center;
+  /* margin: auto 0; */
+`;
+
+const toggles = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const toggleStyle = css`
+  width: 90%;
+  background-color: white;
+  padding: 5px 10px;
+  margin: 5px 0;
+  box-shadow: 1px 1px 15px 0 rgb(19 19 19 / 15%);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 90% 10%;
+
+  :hover {
+    box-shadow: 1px 1px 15px 0 rgb(33 159 163 / 75%);
+  }
+
+  p {
+    font-size: 16.8px;
+    color: #232221;
+    font-weight: 600;
+  }
+
+  span {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+    color: #045e4f;
+  }
+`;
+
 function App() {
   return (
     <>
+      {/* Nav Bar */}
       <section css={navBarContainer}>
         <img src={designwiz} alt="Designwiz Logo" />
         <div css={navBar}>
@@ -243,6 +320,7 @@ function App() {
           <span>Login</span> <button css={buttonGreen}>GET STARTED</button>
         </div>
       </section>
+      {/* Hero */}
       <header css={headerStyle}>
         <section css={heroStyle}>
           <div css={flexContainer}>
@@ -282,9 +360,9 @@ function App() {
       </header>
 
       <main>
-        {/* How it works */}
+        {/* Offers & Services */}
         <section>
-          <div css={howItWorksStyle}>
+          <div css={servicesContainer}>
             <h2>Websites, landing pages, interfaces & more</h2>
             <div css={columnsContainer}>
               <div css={logo}>
@@ -347,6 +425,132 @@ function App() {
             </div>
             <button css={buttonGreen}>See more work</button>
           </div>
+        </section>
+        {/* How it works */}
+        <section css={howItWorksStyle}>
+          <div>
+            <h2>How it works</h2>
+            <h4>
+              Getting high quality designs without breaking the bank has never
+              been easier.
+              <br />
+              No hiring, no contracts, cancel any time.
+            </h4>
+            <div css={stepsContainer}>
+              <div css={stepStyle}>
+                <div css={stepHeadingContainer}>
+                  <div css={number}>1</div>
+                  <div>
+                    <h3>Request a design</h3>{' '}
+                    <p>
+                      Once you've become a member you'll get access to our
+                      design requests tool where you'll be able to submit as
+                      many job requests as you want, share your feedback and
+                      download files, all in one software!
+                    </p>
+                  </div>
+                </div>
+                <div css={toggles}>
+                  <div css={toggleStyle}>
+                    <div>
+                      <p>What type of designs can I request?</p>
+                    </div>
+                    <div>
+                      <span>+</span>
+                    </div>
+                  </div>
+                  <div css={toggleStyle}>
+                    <div>
+                      <p>How many designs can I submit at once?</p>
+                    </div>
+                    <div>
+                      <span>+</span>
+                    </div>
+                  </div>
+                  <div css={toggleStyle}>
+                    <div>
+                      <p>How long does a request take to complete?</p>
+                    </div>
+                    <div>
+                      <span>+</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div css={stepStyle}>
+                <div css={stepHeadingContainer}>
+                  <div css={number}>2</div>
+                  <div>
+                    <h3>We work one request at a time</h3>
+                    <p>
+                      Receive your design, per your brand guidelines, within
+                      48hrs on average - 7 days a week.
+                    </p>
+                  </div>
+                </div>
+                <div css={toggles}>
+                  <div css={toggleStyle}>
+                    <div>
+                      <p>How many revisions I can request per task?</p>
+                    </div>
+                    <div>
+                      <span>+</span>
+                    </div>
+                  </div>
+                  <div css={toggleStyle}>
+                    <div>
+                      <p>How long does a request take to complete?</p>
+                    </div>
+                    <div>
+                      <span>+</span>
+                    </div>
+                  </div>
+                  <div css={toggleStyle}>
+                    <div>
+                      <p>How do I provide feedback to the designers?</p>
+                    </div>
+                    <div>
+                      <span>+</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div css={stepStyle}>
+                <div css={stepHeadingContainer}>
+                  <div css={number}>3</div>
+                  <div>
+                    <h3>Complete and download</h3>
+                    <p>
+                      Once completed, you'll be able to download all the source
+                      files instantly. We keep all the files in one convenient
+                      location, no more emailing files.
+                    </p>
+                  </div>
+                </div>
+                <div css={toggles}>
+                  <div css={toggleStyle}>
+                    <div>
+                      <p>Where can I download the source files</p>
+                    </div>
+                    <div>
+                      <span>+</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </section>
       </main>
       {/* <footer></footer> */}
