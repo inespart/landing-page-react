@@ -333,6 +333,13 @@ const benefitsContainer = css`
   img {
     height: 60px;
     width: auto;
+
+    :hover {
+      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+        rotateY(5deg) rotateZ(5deg) skew(0deg, 0deg);
+      transform-style: preserve-3d;
+      animation: spin 4s linear;
+    }
   }
 
   span {
@@ -346,6 +353,90 @@ const benefitsContainer = css`
 
 const benefitItem = css`
   margin-bottom: 50px;
+`;
+
+// Pricing style
+const pricingStyle = css`
+  background-color: #e6f0ee;
+  padding: 100px 250px;
+
+  span {
+    color: black;
+  }
+`;
+
+const pricingContainer = css`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+`;
+
+const pricingBox = css`
+  background-color: white;
+  text-align: center;
+  border: 1px solid #ccdbd8;
+  border-radius: 8px;
+  padding: 40px 30px 60px;
+
+  span {
+    font-size: 25px;
+  }
+
+  p {
+    color: #232221;
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom: 45px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1 {
+    font-size: 34px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+  }
+
+  span {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 26px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 10px;
+      color: #696663;
+      font-size: 17px;
+      line-height: 35px;
+      font-weight: 400;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+  }
+`;
+
+const oldPrice = css`
+  margin-top: 10px;
+  color: rgba(35, 34, 33, 0.52);
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: line-through;
+`;
+
+const deal = css`
+  margin-bottom: 45px;
+  color: #eeae46;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
 `;
 
 function App() {
@@ -626,6 +717,43 @@ function App() {
               <span>
                 Each design is made for you and is 100% yours - you own it.
               </span>
+            </div>
+          </div>
+        </section>
+        {/* Pricing */}
+        <section css={pricingStyle}>
+          <div>
+            <h2>Fair, simple pricing for all</h2>{' '}
+            <h4>
+              Get a <span>full refund in the first 14 days</span> if you decide
+              we’re not a good fit.
+            </h4>
+          </div>
+          <div css={pricingContainer}>
+            <div css={pricingBox}>
+              <div>
+                <span role="img" aria-label="Icon">
+                  🌱
+                </span>{' '}
+                <br />
+                <p>Design Growth</p>
+              </div>{' '}
+              <div css={oldPrice}>1,199€/mo</div>
+              <div>
+                <h1>899€</h1>
+                <span>/mo</span>
+              </div>
+              <div css={deal}>Save 20% for life!</div>
+              <ul>
+                <li>40 h / mo work</li>
+                <li>Unlimited requests</li>
+                <li>Unlimited revisions</li>
+                <li>Unlimited brands</li>
+                <li>Free stock photos</li>
+                <li>Source files</li>
+                <li>Cancel anytime</li>
+              </ul>
+              <button css={buttonGreen}>Get started</button>
             </div>
           </div>
         </section>
