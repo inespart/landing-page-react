@@ -27,6 +27,14 @@ ReactDOM.render(
           text-decoration: none;
         }
 
+        h2 {
+          font-size: 40px;
+          font-weight: 600;
+          margin: 0px 0;
+          line-height: 48px;
+          text-decoration: none;
+        }
+
         code {
           font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
             monospace;
