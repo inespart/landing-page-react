@@ -6,14 +6,20 @@ import blogging from './images/blogging.png';
 import check from './images/check.png';
 import designwiz from './images/designwiz-logo.png';
 import edreams from './images/edreams.png';
+import fast from './images/fast.png';
 import featureUpvote from './images/FeatureUpvote.png';
+import flatFee from './images/flat-fee.png';
 import howitworks from './images/howitworks.svg';
 import kustomer from './images/kustomer.png';
 import landingpage from './images/landing-page.png';
 import saberFeedback from './images/saberFeedback.png';
 import saizmo from './images/saizmo.png';
+import scalable from './images/scalable-1.png';
+import unique from './images/scalable.png';
 import signaturit from './images/signaturit.png';
 import toldo from './images/toldo.png';
+import topquality from './images/top-quality.png';
+import unlimited from './images/unlimited.png';
 
 // CSS-in-JS
 
@@ -33,6 +39,10 @@ const headerStyle = css`
   background-image: linear-gradient(167deg, #fff 53%, #fce8d1 0, #fce8d1 103%);
   height: 435px;
   padding-bottom: 160px;
+
+  h1 {
+    text-align: left;
+  }
 `;
 
 const navBar = css`
@@ -308,6 +318,36 @@ const toggleStyle = css`
   }
 `;
 
+// Benefits styles
+const benefitsStyle = css`
+  h2 {
+    margin-bottom: 50px;
+  }
+`;
+
+const benefitsContainer = css`
+  margin: 0 250px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  img {
+    height: 60px;
+    width: auto;
+  }
+
+  span {
+    color: #696663;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    text-align: left;
+  }
+`;
+
+const benefitItem = css`
+  margin-bottom: 50px;
+`;
+
 function App() {
   return (
     <>
@@ -540,17 +580,54 @@ function App() {
               </div>
             </div>
           </div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+        </section>
+        {/* Benefits */}
+        <section css={benefitsStyle}>
+          <h2>Benefits</h2>
+          <div css={benefitsContainer}>
+            <div css={benefitItem}>
+              <img src={unlimited} alt="Unlimited icon" />
+              <h3>Unlimited requests</h3>{' '}
+              <span>
+                Make as many design requests or revisions as you wish.
+              </span>
+            </div>
+            <div css={benefitItem}>
+              <img src={fast} alt="Fast icon" />
+              <h3>Speedy delivery</h3>{' '}
+              <span>
+                Get your designs in just a few days on average, 7 days a week.
+              </span>
+            </div>
+            <div css={benefitItem}>
+              <img src={flatFee} alt="Flat fee icon" />
+              <h3>Fixed monthly price</h3>{' '}
+              <span>
+                No surprises here! Pay the same fixed price each month.
+              </span>
+            </div>
+            <div css={benefitItem}>
+              <img src={topquality} alt="Top quality icon" />
+              <h3>Top-grade quality</h3>{' '}
+              <span>
+                Delightful design at your fingerprints whenever you need it.
+              </span>
+            </div>
+            <div css={benefitItem}>
+              <img src={scalable} alt="Scalable icon" />
+              <h3>Flexible to scale</h3>{' '}
+              <span>
+                Scale up or down as you need. Cancel anytime you want.
+              </span>
+            </div>
+            <div css={benefitItem}>
+              <img src={unique} alt="Unique icon" />
+              <h3>Unique and yours</h3>{' '}
+              <span>
+                Each design is made for you and is 100% yours - you own it.
+              </span>
+            </div>
+          </div>
         </section>
       </main>
       {/* <footer></footer> */}

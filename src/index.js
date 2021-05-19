@@ -27,29 +27,25 @@ ReactDOM.render(
           font-family: 'Open Sans', sans-serif;
           text-align: center;
           text-decoration: none;
+          font-weight: 600;
         }
 
         h1 {
           font-size: 40px;
-          font-weight: 600;
           margin-top: 10px;
           line-height: 48px;
-          /* text-decoration: none; */
         }
 
         h2 {
           font-size: 40px;
-          font-weight: 600;
           margin: 0 0;
           line-height: 48px;
-          /* text-decoration: none; */
-          /* text-align: center; */
         }
 
         h3 {
-          font-size: 24px;
-          margin-top: 13px;
-          margin-bottom: 0;
+          font-size: 22px;
+          margin-top: 10px;
+          margin-bottom: 10px;
           color: #232221;
           text-align: left;
         }
@@ -57,8 +53,6 @@ ReactDOM.render(
           font-size: 18px;
           color: #696663;
           font-weight: 400;
-          /* text-align: center; */
-          /* font-family: 'Open Sans', sans-serif; */
           line-height: 28px;
         }
 
