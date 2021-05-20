@@ -1,6 +1,8 @@
 import './App.css';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import Benefit from './Components/Benefit.js';
+import Pricingbox from './Components/Pricingbox.js';
 import vespa from './images/app-2.png';
 import blogging from './images/blogging.png';
 import check from './images/check.png';
@@ -335,10 +337,35 @@ const benefitsContainer = css`
     width: auto;
 
     :hover {
-      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+      /* transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
         rotateY(5deg) rotateZ(5deg) skew(0deg, 0deg);
       transform-style: preserve-3d;
-      animation: spin 4s linear;
+      animation: spin 4s linear; */
+      /* @keyframes bell-movement {
+        0% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(30deg);
+        }
+        50% {
+          transform: rotate(0deg);
+        }
+        75% {
+          transform: rotate(-30deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      animation-name: bell-movement;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in; */
     }
   }
 
@@ -349,10 +376,6 @@ const benefitsContainer = css`
     font-weight: 400;
     text-align: left;
   }
-`;
-
-const benefitItem = css`
-  margin-bottom: 50px;
 `;
 
 // Pricing style
@@ -369,74 +392,6 @@ const pricingContainer = css`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
-`;
-
-const pricingBox = css`
-  background-color: white;
-  text-align: center;
-  border: 1px solid #ccdbd8;
-  border-radius: 8px;
-  padding: 40px 30px 60px;
-
-  span {
-    font-size: 25px;
-  }
-
-  p {
-    color: #232221;
-    font-size: 25px;
-    margin-top: 5px;
-    margin-bottom: 45px;
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
-  }
-
-  h1 {
-    font-size: 34px;
-    font-weight: 800;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-family: 'Inter', sans-serif;
-    display: inline-block;
-  }
-
-  span {
-    display: inline-block;
-    font-weight: 600;
-    font-size: 26px;
-  }
-
-  ul {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-
-    li {
-      margin-bottom: 10px;
-      color: #696663;
-      font-size: 17px;
-      line-height: 35px;
-      font-weight: 400;
-      text-align: center;
-      font-family: 'Inter', sans-serif;
-    }
-  }
-`;
-
-const oldPrice = css`
-  margin-top: 10px;
-  color: rgba(35, 34, 33, 0.52);
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: line-through;
-`;
-
-const deal = css`
-  margin-bottom: 45px;
-  color: #eeae46;
-  font-weight: 600;
-  font-size: 14px;
-  font-family: 'Inter', sans-serif;
 `;
 
 function App() {
@@ -676,48 +631,42 @@ function App() {
         <section css={benefitsStyle}>
           <h2>Benefits</h2>
           <div css={benefitsContainer}>
-            <div css={benefitItem}>
-              <img src={unlimited} alt="Unlimited icon" />
-              <h3>Unlimited requests</h3>{' '}
-              <span>
-                Make as many design requests or revisions as you wish.
-              </span>
-            </div>
-            <div css={benefitItem}>
-              <img src={fast} alt="Fast icon" />
-              <h3>Speedy delivery</h3>{' '}
-              <span>
-                Get your designs in just a few days on average, 7 days a week.
-              </span>
-            </div>
-            <div css={benefitItem}>
-              <img src={flatFee} alt="Flat fee icon" />
-              <h3>Fixed monthly price</h3>{' '}
-              <span>
-                No surprises here! Pay the same fixed price each month.
-              </span>
-            </div>
-            <div css={benefitItem}>
-              <img src={topquality} alt="Top quality icon" />
-              <h3>Top-grade quality</h3>{' '}
-              <span>
-                Delightful design at your fingerprints whenever you need it.
-              </span>
-            </div>
-            <div css={benefitItem}>
-              <img src={scalable} alt="Scalable icon" />
-              <h3>Flexible to scale</h3>{' '}
-              <span>
-                Scale up or down as you need. Cancel anytime you want.
-              </span>
-            </div>
-            <div css={benefitItem}>
-              <img src={unique} alt="Unique icon" />
-              <h3>Unique and yours</h3>{' '}
-              <span>
-                Each design is made for you and is 100% yours - you own it.
-              </span>
-            </div>
+            <Benefit
+              icon={unlimited}
+              alt="Unlimited icon"
+              heading="Unlimited Requests"
+              description="Make as many design requests or revisions as you wish."
+            />
+            <Benefit
+              icon={fast}
+              alt="Fast icon"
+              heading="Speedy delivery"
+              description="Get your designs in just a few days on average, 7 days a week."
+            />
+            <Benefit
+              icon={flatFee}
+              alt="Flat fee icon"
+              heading="Fixed monthly price"
+              description="No surprises here! Pay the same fixed price each month."
+            />
+            <Benefit
+              icon={topquality}
+              alt="Top quality icon"
+              heading="Top-grade quality"
+              description="Delightful design at your fingerprints whenever you need it."
+            />
+            <Benefit
+              icon={scalable}
+              alt="Scalable icon"
+              heading="Flexible to scale"
+              description="Scale up or down as you need. Cancel anytime you want."
+            />
+            <Benefit
+              icon={unique}
+              alt="Unique icon"
+              heading="Unique and yours"
+              description="Each design is made for you and is 100% yours - you own it."
+            />
           </div>
         </section>
         {/* Pricing */}
@@ -730,31 +679,11 @@ function App() {
             </h4>
           </div>
           <div css={pricingContainer}>
-            <div css={pricingBox}>
-              <div>
-                <span role="img" aria-label="Icon">
-                  🌱
-                </span>{' '}
-                <br />
-                <p>Design Growth</p>
-              </div>{' '}
-              <div css={oldPrice}>1,199€/mo</div>
-              <div>
-                <h1>899€</h1>
-                <span>/mo</span>
-              </div>
-              <div css={deal}>Save 20% for life!</div>
-              <ul>
-                <li>40 h / mo work</li>
-                <li>Unlimited requests</li>
-                <li>Unlimited revisions</li>
-                <li>Unlimited brands</li>
-                <li>Free stock photos</li>
-                <li>Source files</li>
-                <li>Cancel anytime</li>
-              </ul>
-              <button css={buttonGreen}>Get started</button>
-            </div>
+            <Pricingbox
+              heading="Design Growth"
+              oldPrice="1,199€/mo"
+              newPrice="899€"
+            />
           </div>
         </section>
       </main>
