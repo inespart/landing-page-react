@@ -14,6 +14,7 @@ import flatFee from './images/flat-fee.png';
 import howitworks from './images/howitworks.svg';
 import kustomer from './images/kustomer.png';
 import landingpage from './images/landing-page.png';
+import relaxIcon from './images/relaxIcon.png';
 import saberFeedback from './images/saberFeedback.png';
 import saizmo from './images/saizmo.png';
 import scalable from './images/scalable-1.png';
@@ -322,6 +323,7 @@ const toggleStyle = css`
 
 // Benefits styles
 const benefitsStyle = css`
+  padding-bottom: 100px;
   h2 {
     margin-bottom: 50px;
   }
@@ -337,35 +339,9 @@ const benefitsContainer = css`
     width: auto;
 
     :hover {
-      /* transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
         rotateY(5deg) rotateZ(5deg) skew(0deg, 0deg);
       transform-style: preserve-3d;
-      animation: spin 4s linear; */
-      /* @keyframes bell-movement {
-        0% {
-          transform: rotate(0deg);
-        }
-        25% {
-          transform: rotate(30deg);
-        }
-        50% {
-          transform: rotate(0deg);
-        }
-        75% {
-          transform: rotate(-30deg);
-        }
-        100% {
-          transform: rotate(0deg);
-        }
-      }
-
-      position: absolute;
-      top: 40%;
-      left: 40%;
-      animation-name: bell-movement;
-      animation-duration: 3.5s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in; */
     }
   }
 
@@ -392,6 +368,110 @@ const pricingContainer = css`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
+`;
+
+// DesignWiz way style
+const designWizWay = css`
+  background-color: white;
+  margin: 100px 350px;
+
+  /* div {
+    padding: 0 90px;
+  } */
+
+  h1 {
+    margin: 0;
+  }
+  h4 {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+  p {
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Open Sans', sans-serif;
+    color: #4a4846;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+  }
+`;
+
+const argumentsDesignWizWay = css`
+  margin-top: 50px;
+  background-color: #e6f0ee;
+  padding: 20px 40px;
+
+  h3 {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  p {
+    margin: 0px auto 40px;
+    font-family: 'Open Sans', sans-serif;
+    color: #696663;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+`;
+
+const relax = css`
+  margin: 100px 350px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  p {
+    margin-top: 5px;
+    color: #696663;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: center;
+  }
+`;
+
+const designWizIcon = css`
+  width: 200px;
+  align-self: center;
+`;
+
+const relaxIconStyle = css`
+  width: 300px;
+  height: auto;
+  align-self: center;
+`;
+
+const footerMenu = css`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 30px;
+
+  a {
+    margin-left: 0px;
+    padding-right: 0px;
+    color: #066756;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+
+    :hover {
+      color: #232221;
+    }
+  }
+`;
+
+const legalText = css`
+  margin: 0px 250px 30px;
+  padding-top: 10px;
+  border-top: 1px solid #e4e2e0;
+  color: #696663;
+  font-size: 12px;
+  line-height: 25px;
+  font-weight: 400;
+  text-align: center;
 `;
 
 function App() {
@@ -461,7 +541,7 @@ function App() {
                 </div>
                 <div css={servicesBlockStyle}>
                   <img src={check} alt="check" />
-                  <div>Websites</div>
+                  <div>Wireframes</div>
                 </div>
                 <div css={servicesBlockStyle}>
                   <img src={check} alt="check" />
@@ -680,14 +760,144 @@ function App() {
           </div>
           <div css={pricingContainer}>
             <Pricingbox
+              emoji="🌱"
               heading="Design Growth"
               oldPrice="1,199€/mo"
               newPrice="899€"
+              planItems={[
+                '40 h / mo work',
+                'Unlimited requests',
+                'Unlimited revisions',
+                'Unlimited brands',
+                'Free stock photos',
+                'Source files',
+                'Cancel anytime',
+              ]}
+            />
+            <Pricingbox
+              emoji="🔥"
+              heading="Design Scale"
+              oldPrice="1,799€/mo"
+              newPrice="1,499€"
+              planItems={[
+                '80 h / mo work',
+                'Unlimited requests',
+                'Unlimited revisions',
+                'Unlimited brands',
+                'Free stock photos',
+                'Source files',
+                'Cancel anytime',
+              ]}
+            />
+            <Pricingbox
+              emoji="🚀"
+              heading="Design + Webflow"
+              oldPrice="2,399€/mo"
+              newPrice="1,999€"
+              listItem="All the Design Scale plan features plus"
+              planItems={[
+                'Webflow development',
+                'Simple animations',
+                'Premium illustrations',
+                'Ongoing maintenance',
+                'Cancel anytime',
+              ]}
             />
           </div>
         </section>
+        {/* The DesignWiz way */}
+        <section css={designWizWay}>
+          <div>
+            <h1>The DesignWiz way</h1>
+            <h4>The sustainable, low-stress way we do business</h4>
+            <p>
+              We know how important design is for all companies and startups.
+              Having a good design can help you improve your branding, your
+              position and delight your customers with an amazing experience
+              using your product or service.
+            </p>
+            <p>
+              But sometimes, achieving this quality is very expensive. And not
+              all companies have the cash to make that happen.
+            </p>
+            <p>
+              That is why, after a decade designing for all types of companies
+              and startups, we've decided to create DesignWiz. To help you get
+              high quality design the reliable and affordable way delivered by
+              experts.
+            </p>
+          </div>
+          <div css={argumentsDesignWizWay}>
+            <div>
+              <h3>No shenanigans</h3>
+              <p>
+                We treat you how we’d like to be treated as customers. Some
+                concrete examples: you can cancel anytime with zero hassle, and
+                upgrade or downgrade whenever you want.
+              </p>
+            </div>
+            <div>
+              <h3>We want you to be happy with our service.</h3>
+              <p>
+                Not happy delighted? Let us know and we’ll find a solution. If
+                we can’t, we’ll refund your most recent payment.
+              </p>
+            </div>
+            <div>
+              <h3>We keep things simple</h3>
+              <p>
+                We strive for simplicity, something that is not easy to achieve.
+                We want DesignWiz to always be helpful, and not a source of
+                confusion of frustration.
+              </p>
+            </div>
+            <div>
+              <h3>We’re friendly and helpful</h3>
+              <p>
+                Got a problem? Let us know and we’ll do our best to solve it.
+              </p>
+            </div>
+            <div>
+              <h3>We do things well</h3>
+              <p>
+                Perfection is an unreachable target but we can still aim for it.
+                We avoid half-solutions and stuff we don't believe it's not
+                good.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
-      {/* <footer></footer> */}
+      <footer>
+        <section css={relax}>
+          <img src={designwiz} alt="logo" css={designWizIcon} />
+          <p>
+            Unlock a more affordable and convenient way of getting high-quality
+            design work. <br />- so you can relax knowing you are in expert
+            hands :)
+          </p>
+          <img src={relaxIcon} alt="relax" css={relaxIconStyle} />
+
+          <div css={footerMenu}>
+            <div>
+              <a href="#1">How it works</a>
+            </div>
+            <div>
+              <a href="#1">About us</a>
+            </div>
+            <div>
+              <a href="#1">Contact us</a>
+            </div>
+            <div>
+              <a href="#1">Schedule a call</a>
+            </div>
+          </div>
+        </section>
+
+        <section css={legalText}>
+          <div>@Copyright 2021 · Made in Barcelona · Designwiz</div>
+        </section>
+      </footer>
     </>
   );
 }

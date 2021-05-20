@@ -43,7 +43,7 @@ ReactDOM.render(
         }
 
         h3 {
-          font-size: 22px;
+          font-size: 24px;
           margin-top: 10px;
           margin-bottom: 10px;
           color: #232221;

@@ -41,6 +41,17 @@ const pricingBox = css`
     margin-left: 0;
     padding-left: 0;
     padding-bottom: 30px;
+    height: 325px;
+
+    div {
+      margin-bottom: 15px;
+      padding-top: 0px;
+      color: #232221;
+      font-size: 17px;
+      line-height: 22px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+    }
 
     li {
       margin-bottom: 10px;
@@ -94,7 +105,7 @@ export default function Pricingbox(props) {
     <div css={pricingBox}>
       <div>
         <span role="img" aria-label="Icon">
-          🌱
+          {props.emoji}
         </span>
         <br />
         <p>{props.heading}</p>
@@ -106,13 +117,10 @@ export default function Pricingbox(props) {
       </div>
       <div css={deal}>Save 20% for life!</div>
       <ul>
-        <li>40 h / mo work</li>
-        <li>Unlimited requests</li>
-        <li>Unlimited revisions</li>
-        <li>Unlimited brands</li>
-        <li>Free stock photos</li>
-        <li>Source files</li>
-        <li>Cancel anytime</li>
+        <div>{props.listItem}</div>
+        {props.planItems.map((item) => {
+          return <li key={item}>{item}</li>;
+        })}
       </ul>
       <button css={buttonGreen}>Get started</button>
     </div>
