@@ -105,13 +105,12 @@ const smallBox = css`
   width: 40%;
 `;
 
-const buttonGreen = css`
+export const buttonGreen = css`
   background-color: #066756;
   border: none;
   border-radius: 5px;
   font-weight: 600;
   color: #fff;
-  /* text-transform: uppercase; */
   padding: 12px 17px;
   margin-top: 10px;
   font-size: 14px;
@@ -138,10 +137,7 @@ const buttonBrown = css`
 `;
 
 // Hero Banner Customers style
-const customersStyle = css`
-  /* background-color: #fbe7d0; */
-  /* padding-bottom: 5px; */
-`;
+const customersStyle = css``;
 
 const customerStyleContainer = css`
   margin: 165px 250px;
@@ -173,7 +169,6 @@ const servicesContainer = css`
     font-size: 20px;
     font-weight: 600;
     text-align: left;
-    /* margin-left: 55px; */
   }
 `;
 
@@ -189,11 +184,8 @@ const columnsContainer = css`
 `;
 
 const logo = css`
-  /* display: flex; */
-
   img {
     width: 460px;
-    /* justify-content: center; */
   }
 `;
 
@@ -206,7 +198,6 @@ const offer = css`
 
 const servicesBlockStyle = css`
   display: flex;
-  /* align-items: center; */
   margin-bottom: 20px;
 
   img {
@@ -283,7 +274,6 @@ const number = css`
   font-weight: 600;
   opacity: 0.3;
   text-align: center;
-  /* margin: auto 0; */
 `;
 
 const toggles = css`
@@ -373,11 +363,7 @@ const pricingContainer = css`
 // DesignWiz way style
 const designWizWay = css`
   background-color: white;
-  margin: 100px 350px;
-
-  /* div {
-    padding: 0 90px;
-  } */
+  margin: 140px 350px;
 
   h1 {
     margin: 0;
@@ -414,6 +400,10 @@ const argumentsDesignWizWay = css`
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
+  }
+
+  span {
+    text-decoration: line-through;
   }
 `;
 
@@ -839,8 +829,8 @@ function App() {
             <div>
               <h3>We want you to be happy with our service.</h3>
               <p>
-                Not happy delighted? Let us know and we’ll find a solution. If
-                we can’t, we’ll refund your most recent payment.
+                Not <span>happy</span> delighted? Let us know and we’ll find a
+                solution. If we can’t, we’ll refund your most recent payment.
               </p>
             </div>
             <div>

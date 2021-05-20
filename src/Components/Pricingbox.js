@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { buttonGreen } from '../App.js';
 
 const pricingBox = css`
   background-color: white;
@@ -79,25 +80,6 @@ const deal = css`
   font-weight: 600;
   font-size: 14px;
   font-family: 'Inter', sans-serif;
-`;
-
-const buttonGreen = css`
-  background-color: #066756;
-  border: none;
-  border-radius: 5px;
-  font-weight: 600;
-  color: #fff;
-  /* text-transform: uppercase; */
-  padding: 12px 17px;
-  margin-top: 10px;
-  font-size: 14px;
-  font-family: 'Inter', sans-serif;
-  cursor: pointer;
-
-  :hover {
-    background-color: #055c4d;
-    box-shadow: rgb(0 0 0 / 12%) 0px 7px 50px 0px;
-  }
 `;
 
 export default function Pricingbox(props) {
